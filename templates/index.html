@@ -1,0 +1,175 @@
+{% extends 'layout.html' %}
+{% block body %}
+<style>
+    .fa-angle-double-right {
+        color: #fa6c00;
+    }
+</style>
+<title>Annual International Congress on Computer Science</title>
+<!-- Header Start -->
+<div class="container-fluid header bg-primary p-0 mb-5">
+    <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
+        <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
+            {{ home.hero.html_content | safe }}
+            <!-- <h1 class="display-4 text-white mb-5">{{ home.hero.html_content }}</h1> -->
+            <!-- <div class="row g-4">
+                <div class="col-sm-3">
+                    <div class="border-start border-light ps-4">
+                        <h3 class="text-white mb-1" data-toggle="counter-up">500</h3>
+                        <p class="text-light mb-0">Registration Capacity</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="border-start border-light ps-4">
+                        <h3 class="text-white mb-1" data-toggle="counter-up">10</h3>
+                        <p class="text-light mb-0">Topic</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="border-start border-light ps-4">
+                        <h3 class="text-white mb-1" data-toggle="counter-up">20</h3>
+                        <p class="text-light mb-0">Awards & Grants</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="border-start border-light ps-4">
+                        <h3 class="text-white mb-1" data-toggle="counter-up">2</h3>
+                        <p class="text-light mb-0">Conference Platform</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+            <div class="owl-carousel header-carousel">
+
+
+                <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" src="{{ home.hero.image }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- President's Welcome Start -->
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+    <h3>{{ home.president_welcome.title }}</h3>
+</div>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="d-flex flex-column">
+                    <img class="img-fluid rounded w-75 align-self-end" src="{{ home.president_welcome.image }}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <p style="text-align: justify;">
+                    {{ home.president_welcome.html_content | safe }}
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- President's Welcome End -->
+
+
+<!-- Publication of Congress Papers Start -->
+<div class="container-xxl py-5">
+    <div class="container"></div>
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        <h3>Publication of Congress Papers</h3>
+    </div>
+</div>
+</div>
+<!-- Publication of Congress Papers End -->
+
+<!-- Congress Scope Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 1000px;">
+            <h3>{{ home.congress_scope.title }}</h3>
+            <p>{{ home.congress_scope.description | safe }}</p>
+        </div>
+        <div class="row g-4">
+            {% for topic in home.congress_scope.cards %}
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                        style="width: 30px; height: 5px;">
+                        <img src="{{ topic.image }}" alt="">
+                    </div>
+                    <h5 class="mb-3">{{ topic.title }}</h5>
+                    <p class="mb-4">{{ topic.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Congress Scope End -->
+
+
+<!-- Congress Stream Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 1000px;">
+            <h3>{{ home.congress_stream.title }}</h3>
+            <p>{{ home.congress_stream.description | safe }}</p>
+        </div>
+        <div class="row g-4">
+            {% for topic in home.congress_stream.cards %}
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="bg-light rounded p-4">
+                    <h5 class="text-primary mb-4">{{ topic.title }}</h5>
+                    <div class="ms-3">
+                        {% for item in topic.items %}
+                        <p><i class="fa fa-angle-double-right me-2"></i>{{ item }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Congress Stream End -->
+
+<!-- Trusted Section Start -->
+<!-- <div class="container-fluid bg-dark text-light py-5">
+    <div class="container text-center">
+        <p style="font-size: larger;"><strong>TRUSTED BY OVER 5000+ ACADEMIC PERSONS AND STUDENTS</strong></p>
+        <p class="mb-4">Join our community of Computer Science around the world helping you succeed</p>
+        <a href="" class="btn btn-primary rounded-pill py-2 px-5">GET STARTED</a>
+    </div>
+</div> -->
+<!-- Trusted Section End -->
+
+<!-- Why Choose Us Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h3>{{ home.why_choose_us.title }}</h3>
+            <p>{{ home.why_choose_us.description | safe }}</p>
+        </div>
+        <div class="row g-4">
+            {% for card in home.why_choose_us.cards %}
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                        style="width: 220px; height: 60px;">
+                        <i class="fa fa-book text-primary fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">{{ card.title }}</h5>
+                    <p class="mb-4">{{ card.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Why Choose Us End -->
+
+{% endblock %}
